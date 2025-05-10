@@ -6,11 +6,7 @@ import { parseData, validateFile } from './utils.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: 'https://backend-practice-4xeq.onrender.com/bfhl', // Or whatever port your frontend runs on
-  methods: ['GET', 'POST'],
-  credentials: true
-}));
+app.use(cors());
 app.use(bodyParser.json({ limit: '5mb' }));
 
 // GET endpoint
