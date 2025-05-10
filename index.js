@@ -1,10 +1,16 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors'; 
 import { parseData, validateFile } from './utils.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors({
+  origin: 'http://localhost:5000', // Or whatever port your frontend runs on
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(bodyParser.json({ limit: '5mb' }));
 
 // GET endpoint
@@ -17,8 +23,8 @@ app.post('/bfhl', async (req, res) => {
   try {
     const { data = [], file_b64 = '' } = req.body;
 
-    const user_id = "harshitasalvi_10092004 yourname_ddmmyyyy"; // replace with your actual details
-    const email = "harshitasalvi220480@acropolis.in";
+    const user_id = "harsh92004 yourname_ddmmyyyy"; // replace with your actual details
+    const email = "harry.in";
     const roll_number = "0827CS221105";
 
     const { numbers, alphabets, highestLower, hasPrime } = parseData(data);
