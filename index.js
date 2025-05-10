@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: 'http://localhost:5000', // Or whatever port your frontend runs on
+  origin: 'https://backend-practice-4xeq.onrender.com/bfhl', // Or whatever port your frontend runs on
   methods: ['GET', 'POST'],
   credentials: true
 }));
@@ -23,7 +23,7 @@ app.post('/bfhl', async (req, res) => {
   try {
     const { data = [], file_b64 = '' } = req.body;
 
-    const user_id = "harsh92004 yourname_ddmmyyyy"; // replace with your actual details
+    const user_id = "harsh_92004"; // replace with your actual details
     const email = "harry.in";
     const roll_number = "0827CS221105";
 
